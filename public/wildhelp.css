@@ -144,6 +144,38 @@ h1{
 } */
 
 /* PAGE HELP */
+#navBarAide
+{
+  height: 5em;
+}
+
+#formHelp
+{
+  text-align: center;
+}
+
+#formHelp h2
+{
+  margin: 4% 0;
+}
+
+#formHelp label
+{
+  margin: 2% 0 1% -47%;
+}
+
+.input-group
+{
+  width: 65%;
+}
+
+.form-control
+{
+  width: 60%;
+  margin: 0 auto;
+
+}
+
 #alert-wrapper-help
 {
   position: fixed;

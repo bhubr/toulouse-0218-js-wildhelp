@@ -5,7 +5,7 @@ let id = 1
 
 const requestAllHelp = (req, res) => {
   console.log(req.body)
-  const language = req.body.language
+  const technoId = req.body.langage
   const topic = req.body.topic
   const description = req.body.description
 
@@ -15,9 +15,9 @@ const requestAllHelp = (req, res) => {
     })
   }
 
-
-    const request = `INSERT INTO wildRequest (id, userId, technoId, topic, description ) VALUES('${id}', '${userId}', '${technoId}', '${topic}', '${description}' )`
-
+    const userId = 3
+    const request = `INSERT INTO wildRequest (userId, technoId, topic, description ) VALUES (${userId}, ${technoId}, '${topic}', '${description}' )`
+    
 
   connection.query(request, (error, results) => {
     // if (error) throw error

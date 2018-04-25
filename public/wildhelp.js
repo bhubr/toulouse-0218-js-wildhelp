@@ -1,4 +1,4 @@
-'use strict'
+  'use strict'
 const targetElement = document.getElementById('main')
 
 const requetes = [
@@ -313,60 +313,62 @@ const listerequeteHtml = (requetes) => /* @html */ `<div class="nav-side-menu">
 
 // PAGE DEMANDE AIDE
 
-const aideHtml = /* @html */ `<div class="nav-side-menu">
-   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <a class="p-2 text-dark" href="/">
-         <h5 class="my-0 mr-md-auto font-weight-normal">Accueil</h5>
-      </a>
+const aideHtml = /* @html */ `
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4  bg-white border-bottom box-shadow" id="navBarAide">
+      <h5 class="my-0 mr-md-auto">WildHelp</h5>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a href="/" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-log-out"></span> Deconnexion </a>
+        <a class="p-2 text-dark" href="/">
+           <h5 class="my-0 mr-md-auto font-weight-normal">Accueil</h5>
+        </a>
       </nav>
+      <a href="/" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-log-out">
+        </span> Deconnexion
+      </a>
    </div>
    <div class="container">
      <form id="formHelp" class="form-horizontal" method="POST" action="/aide">
-       <div class="row">
-         <div class="col-md-6">
-           <h2>Demande d'aide</h2>
-         </div>
-       </div>
-       <div class="row">
-         <div class="col-md-6">
-           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-             <div class="input-group-addon" style="width: 2.6rem">
-               <i class="fa fa-repeat"></i>
-             </div>
-             <select id="subject" name="langage" class="form-control" required="required">
-               <option value="" selected="">Selectionnez le langage</option>
-               <option value="1">JavaScript</option>
-               <option value="2">JAVA</option>
-               <option value="3">PHP</option>
-             </select>
+       <div class="bodyHelp">
+         <div class="row">
+           <div class="col-md-12">
+             <h2>Demande d'aide</h2>
            </div>
          </div>
-       </div>
-       <div class="row">
-         <div class="col-md-6">
-           <p>
-             <label for="topic">Sujet requête :</label>
-             <input type="text" class="form-control" name="topic" id="topic" placeholder="Ex : Algorithme" size="40" maxlength="50" required="required" />
-           </p>
+         <div class="row">
+           <div class="col-md-9 offset-md-3">
+             <div class="input-group">
+               <select id="subject" name="langage" class="form-control" required="required">
+                 <option value="" selected="">Selectionnez le langage</option>
+                 <option value="1">JavaScript</option>
+                 <option value="2">JAVA</option>
+                 <option value="3">PHP</option>
+               </select>
+             </div>
+           </div>
          </div>
-       </div>
-       <div class="row">
-         <div class="col-md-6">
-           <p>
-             <textarea name="description" id="description" class="form-control" rows="10" cols="50" required="required"
-      placeholder="Décris ici en détail ton problème"></textarea>
-          </p>
+         <div class="row">
+           <div class="col-md-12">
+             <p>
+               <label for="topic">Sujet requête :</label>
+               <input type="text" class="form-control" name="topic" id="topic" placeholder="Ex : Algorithme" size="40" maxlength="50" required="required" />
+             </p>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
+             <p>
+               <textarea name="description" id="description" class="form-control" rows="10" cols="50" required="required"
+        placeholder="Décris ici en détail ton problème"></textarea>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mb-2">
-          <input class="btn-outline-primary" type="submit" value="Save me !"/>
-        </div>
-        <div class="col-md-6">
-          <input class="btn btn-outline-danger" type="reset" value="Annuler" />
+        <div class="row buttonHelp">
+          <div class="col-md-6 mb-2">
+            <input class="btn btn-outline" type="submit" value="Save me !"/>
+          </div>
+          <div class="col-md-6">
+            <a href="/"><button type="reset" class="btn btn-outline-danger">Annuler</button></a>
+          </div>
         </div>
       </div>
     </form>
