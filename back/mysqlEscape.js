@@ -23,5 +23,4 @@ function mysqlEscape (str) {
     });
 }
 
-
 module.exports = mysqlEscape

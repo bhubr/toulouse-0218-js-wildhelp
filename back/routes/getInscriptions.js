@@ -44,15 +44,6 @@ const getInscriptions =  (req, res) => {
       error: 'email incorrect !'
     })
   }
-  for(champ['email'] of champsObligatoires){
-    if(email ) {
-      return res.status(400).json({
-        error: 'Email déjà enregistré, vérifiez votre adresse ou connectez vous via la page connexion !'
-      })
-    }
-  }
-
-
 
   const given = mysqlEscape(req.body['name'])
   const family = mysqlEscape(req.body['surname'])
@@ -64,15 +55,15 @@ const getInscriptions =  (req, res) => {
 
   connection.query(selectUser, (error, results, fields) => {
     if(error) {
+      console.error(error)
       return res.status(500).json({
-        error: error.inscription
+        error: ('Email déjà enregistré, vérifiez votre adresse ou connectez vous via la page connexion !')
       })
     }
     console.log(results)
     res.json({results})
   })
 }
-
 
 
 module.exports = getInscriptions

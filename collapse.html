@@ -14,37 +14,48 @@
           </button>
         </h5>
       </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           Je suis la première requête visible !
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="heading">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" >
-            Requête #2
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          Je suis la deuxième requête disponible.
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="heading">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" >
-            Requête #3
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          On m'ouvre en dernier, je suis la dernière requête...
+
+
+          <p>Comment me contacter ?</p>
+          <form id="choix-contact">
+
+        <!-- La création de cases Radio au lieu de cases Checkbox, qui oblige l'utilisateur à avoir qu'un seul choix de contact. -->
+
+            <input type="radio" name="contact" value="email" checked />par e-mail<br>
+            <input type="radio" name="contact" value="slack" />sur Slack
+
+        <!-- Intégration du champ de texte Pseudo Slack, qui apparait lors du click sur la case "sur Slack". -->
+
+            <input type="text" name="pseudoSlack" value="" style="display:none" /><br>
+            <button type="submit" class="btn btn-primary">Je t'aide</button>
+          </form>
+          <script>
+            const formulaire = document.getElementById('choix-contact')
+            const inputs = formulaire.getElementsByTagName('input')
+            const inputPseudoSlack = inputs[2]
+            for (let i = 0; i <= 1; i++ ) {
+              const bouton = inputs[i]
+              bouton.addEventListener("click", function () {
+              console.dir(bouton)
+
+        // Le champ de texte Pseudo Slack, apparait lors du click sur la case "sur Slack".
+
+               if (bouton.value == "slack") {
+                inputPseudoSlack.style.display="inline"
+               }
+
+        // Le champ de texte Pseudo Slack, disparait lors du click sur la case "par e-mail".
+
+               else {
+                inputPseudoSlack.style.display="none"
+               }
+              })
+            }
+          </script>
         </div>
       </div>
     </div>
